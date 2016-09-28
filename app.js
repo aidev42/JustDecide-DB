@@ -35,7 +35,7 @@ app.post('/retrieve', function (req, res, done) {
   console.log('user email is: ', req.body.email)
   console.log('password is:', req.body.password)
   User.findOne({
-      'email': "test@aol.com"
+      'email': req.body.email
     },
     function(err, user){
       if(err || req.body.password == undefined){ return done(err); }
